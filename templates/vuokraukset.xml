@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ul id="Vuokraus" xmlns="http://www.w3.org/1999/xhtml">
+{% for v in vuokraukset %}
+
+<li>
+    <ul>
+    {% for e in elokuvat %}
+      {% if e['ElokuvaID'] == v['ElokuvaID'] %}
+      <li>Elokuva: {{e["Nimi"]}} </li>
+      {% endif %}
+    {% endfor %}
+    {% for j in jasenet %}
+      {% if v['JasenID'] == j['JasenID'] %}
+      <li>Jäsen: {{j["JasenNimi"]}} </li>
+      {% endif %}
+    {% endfor %}
+    
+    <li>VuokrausPVM: {{v["VuokrausPVM"]}}</li>
+    <li>PalautusPVM: {{v["PalautusPVM"]}}</li>
+    <li>Maksettu: {{v["Maksettu"]}}</li>
+    <li>--------------</li>
+    </ul>
+</li>
+{% endfor %}
+</ul>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<select id="ElokuvaNimi" xmlns="http://www.w3.org/1999/xhtml">
+{% for e in elokuvat %}
+    <option value="{{e['ElokuvaID']}}">{{e['ElokuvaNimi']}}</option>
+{% endfor %}
+</select>
